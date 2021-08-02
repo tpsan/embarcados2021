@@ -1,0 +1,24 @@
+============================================================================
+
+flexray.txt
+
+Readme file for the FlexRay Protocol Family (aka Socket FlexRay)
+
+This file contains
+
+  1 Overview / What is Socket FlexRay
+
+============================================================================
+
+1 Overview / What is Socket FlexRay
+-----------------------------------
+
+The socket FlexRay package is an implementation of FlexRay protocols
+for Linux. FlexRay is a networking technology used in automotive fields as
+successor of the Controller Area Network (CAN). It is designed to be faster
+and more reliable than CAN.
+The Socket FlexRay implementation uses the Berkeley socket API, the Linux
+network stack and implements the FlexRay device drivers as network interfaces.
+The FlexRay socket API has been designed as similar as possible to the TCP/IP
+protocols to allow programmers, familiar with network programming, to easily
+learn how to use FlexRay sockets.

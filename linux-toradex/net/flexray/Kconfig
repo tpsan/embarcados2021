@@ -1,0 +1,30 @@
+#
+# FlexRay network layer core configuration
+#
+
+menuconfig FLEXRAY
+	depends on NET
+	tristate "FlexRay bus subsystem support"
+	---help---
+	  FlexRay is a slow (up to 10Mbit/s) serial communications
+	  protocol which was developed by the FlexRay Consortium, a
+	  cooperation of leading companies in the automotive industry, from
+	  2000 till 2010, which result in ISO 10681.
+	  More information on the FlexRay network protocol family PF_FLEXRAY
+	  is contained in <Documentation/networking/flexray.txt>.
+
+	  If you want FLEXRAY support you should say Y here and also to the
+	  specific driver for your controller(s) below.
+
+config FLEXRAY_RAW
+	tristate "Raw FlexRay Protocol"
+	depends on FLEXRAY
+	default N
+	---help---
+	  The raw FlexRay protocol option offers access to the FlexRay bus
+	  via the BSD socket API. You probably want to use the raw socket in
+	  most cases where no higher level protocol is being used.
+	  To receive/send raw FLEXRAY messages, use AF_FLEXRAY with protocol
+	  FLEXRAY_RAW.
+
+source "drivers/net/flexray/Kconfig"

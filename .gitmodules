@@ -1,0 +1,11 @@
+[submodule "CANopenDemo"]
+	path = CANopenDemo
+	url = https://github.com/CANopenNode/CANopenDemo
+[submodule "linux-toradex"]
+	path = linux-toradex
+	url = git://git.toradex.com/linux-toradex.git
+	branch = toradex_vf_4.4
+[submodule "u-boot-toradex"]
+	path = u-boot-toradex
+	url = git://git.toradex.com/u-boot-toradex.git
+	branch = 2016.11-toradex

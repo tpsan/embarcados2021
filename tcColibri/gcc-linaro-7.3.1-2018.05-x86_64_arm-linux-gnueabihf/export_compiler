@@ -1,0 +1,3 @@
+export ARCH=arm
+export PATH=~/gcc-linaro/bin/:$PATH
+export CROSS_COMPILE=arm-linux-gnueabihf-

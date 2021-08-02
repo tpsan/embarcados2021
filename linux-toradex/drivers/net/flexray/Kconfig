@@ -1,0 +1,41 @@
+menu "FlexRay Device Drivers"
+	depends on FLEXRAY
+
+config FLEXRAY_VFLEXRAY
+	tristate "Virtual Local FlexRay Interface (vflexray)"
+	depends on FLEXRAY
+	---help---
+	  Similar to the network loopback devices, vflexray offers a
+	  virtual local FlexRay interface.
+
+	  This driver can also be built as a module.  If so, the module
+	  will be called vflexray.
+
+config FLEXRAY_DEV
+	tristate "Platform FlexRay drivers with Netlink support"
+	depends on FLEXRAY
+	default y
+	---help---
+	  Enables the common framework for platform FlexRay drivers with
+	  Netlink support. This is the standard library for FlexRay drivers.
+	  If unsure, say Y.
+
+config FLEXRAY_FLEXCARD
+	tristate "Support for the Flexcard FlexRay function"
+	depends on FLEXRAY_DEV
+	---help---
+	  Driver for Eberspächer FlexCard PMC II, it supports Flexray and
+	  CAN busses.
+	  This driver can also be built as a module. If so, the module
+	  will be called flexcard_fr.
+
+config FLEXRAY_DEBUG_DEVICES
+	bool "FlexRay devices debugging messages"
+	depends on FLEXRAY
+	---help---
+	  Say Y here if you want the Flexray device drivers to produce a bunch
+	  of debug messages to the system log.  Select this if you are having
+	  a problem with FlexRay support and want to see more of what is going
+	  on.
+
+endmenu
