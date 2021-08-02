@@ -146,7 +146,7 @@ https://opensource.lely.com/canopen/docs/installation/
 
 <hr>
 
-# Links Possivelmente úteis
+# Referências e outros links:
 
 > Git com os arquivos do CANopenDemo, de onde fizemos o git clone e de onde baseamos este projeto:
 https://github.com/CANopenNode/CANopenDemo
@@ -159,3 +159,7 @@ https://developer.toradex.com/knowledge-base/can-linux#Kernel_Support_Colibri_VF
 
 > Criação da Build do kernel e onde conseguimos os arquivos do git toradex <br>
 https://developer.toradex.com/knowledge-base/build-u-boot-and-linux-kernel-from-source-code
+
+> Este projeto foi feito em parceria com o de outro grupo de colegas da turma:
+https://github.com/KingCoolgate/projetoEmbarcados2021
+
