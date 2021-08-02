@@ -1,3 +1,4 @@
+// Define as libraries implementadas
 #include <pthread.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -8,6 +9,7 @@
 pthread_t id0, id1, id2, id3;
 int flag = 1;
 
+// Define as componentes principais do codigo
 void prtcl(char net[4],int ndId, char rw[5], char index[4], char subindex[2], int valor) {
 
   char  call[43]  ="";
@@ -26,10 +28,11 @@ void prtcl(char net[4],int ndId, char rw[5], char index[4], char subindex[2], in
   int   i=0;
   int   j=0;
 
-  //formato da string no final deve ser
+  //A string final tera um formato tipo:
   // "./send.sh can0 602#40.10.17.00.00.00.00.00"
 
   //Define o Script a ser chamado
+	// nesses trechos de codigo utiliza-se a funcao strcat() para a concatenacao das strings
   strcat(call, "./send");
   strcat(call, ".sh ");
 
@@ -42,7 +45,7 @@ void prtcl(char net[4],int ndId, char rw[5], char index[4], char subindex[2], in
   strcat(call, nd);
   strcat(call, "#");
 
-  //Define se vai ser Read ou Write no barramento
+  //Define se vai ser Read ou Write no barramento atraves da funcao strcmp() utilizada para comparar duas strings
   if (!(strcmp(rw,"write"))){
     strcat(call,"2B.");
   }
@@ -50,7 +53,7 @@ void prtcl(char net[4],int ndId, char rw[5], char index[4], char subindex[2], in
     strcat(call,"40.");
   }
 
-  //Define o Index do nó chamado
+  //Define o Index do nó chamado (endereço de base de 16 bits do objeto)
   indx1[0] = index[2];
   indx1[1] = index[3];
   strcat(call, indx1);
@@ -61,11 +64,11 @@ void prtcl(char net[4],int ndId, char rw[5], char index[4], char subindex[2], in
   strcat(call, indx2);
   strcat(call, ".");
 
-  //Define o SubIndex do nó chamado
+  //Define o SubIndex do nó chamado (endereço de base de 8 bits do objeto)
   strcat(call, subindex);
   strcat(call, ".");
 
-  //Valor a ser passado de até 8 digitos em HEX
+  //  Define o valor a ser passado, de até 8 digitos em HEX
   sprintf(valc, "%X", valor);
   val1 = strlen(valc);
 
